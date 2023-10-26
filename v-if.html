@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-If</title>
+</head>
+<body>
+
+    <div id="app">
+        <p v-if="state">
+            {{ "Nyala" }}
+        </p>
+        <p v-else="state">
+            {{ "Mati" }}
+        </p>
+
+        <p v-if="angka > 8">
+            {{ "Baik" }}
+        </p>
+        <p v-else-if="angka <= 8 && angka >= 6">
+            {{ "Cukup" }}
+        </p>
+        <p v-else="angka">
+            {{ "Buruk" }}
+        </p>
+    </div>
+
+    <script type="module">
+
+        import { createApp, ref } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+
+        createApp({
+            data(){
+                return {
+                    state   : false,
+                    angka   : 8,
+                }
+            }
+        }).mount("#app");
+
+    </script>
+</body>
+</html>

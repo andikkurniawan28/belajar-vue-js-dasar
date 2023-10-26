@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{ message }}</p>
+        <p>{{ message2 }}</p>
+        <p>
+            <button @click="kurang()">-</button>
+            {{ count }}
+            <button @click="tambah()">+</button>
+        </p>
+    </div>
+
+    <script>
+
+        const { createApp } = Vue;
+
+        createApp({
+            data(){
+                return {
+                    message : "Hello World",
+                    message2 : "Hello Guys",
+                    count : 0,
+                }
+            },
+            methods : {
+                kurang(){
+                    this.count--
+                },
+                tambah(){
+                    this.count++
+                }
+            }
+        }).mount("#app");
+
+    </script>
+
+</body>
+</html>
